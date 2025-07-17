@@ -1,0 +1,42 @@
+html {
+  /* px means "pixels". The base font size is now 10 pixels high */
+  font-size: 20px;
+  /* Replace PLACEHOLDER with the font-family property value you got from Google Fonts */
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  background-color:floralwhite;
+}
+
+body {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+h1, h2 {
+    font-family: "Winky Rough", sans-serif;
+    color: #000945;
+}
+
+h3 {font-family: 'Courier New', Courier, monospace; font-style: italic;}
+
+h1 {text-align: center; text-shadow: 3px 3px 1px gainsboro;}
+
+p, li {
+    font-size: 26;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+img {
+    /* display: block; */
+    margin-left: 30px;
+    max-block-size: 60px;
+}
+
+button {
+  display: block;
+  color: whitesmoke;
+  background-color: #000945;
+  width: 120px;
+  height: 30px;
+}
