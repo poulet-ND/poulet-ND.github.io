@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=devicewidth">
+        <!--Titre et icone-->
+        <title>Comment installer linux à côté de windows</title>
+        <link rel="icon", type="image/svg" href="images/site icon.png">
+        <!--Polices-->
+        <link rel="stylesheet", href="styles/style.css">
+        <!--    Nunito-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital@0;1&display=swap" rel="stylesheet">
+        <!--    Winky rough-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        <!--Java scripts-->
+        <script async src="scripts/main.js"></script>
+    </head>
+    <body>
+        <!-- Titre -->
+        <h1>Comment installer linux à côté de windows</h1>
+        <!--Image Linux-->
+        <img src="images/linux logo.svg" alt="Logo de linux">
+
+
+        <!--Button-->
+        <button>Change User</button>
+
+        <!--Introduction-->
+        <p>
+            Ici nous allons voir comment installer linux à côté de windows.
+            Avant de commencer, n'oublier pas de faire une copie de vos dossiers sur un disque dur externe ou sur un compte cloud temporaire.
+            Installer linux n'engendre normalement aucun risque mais c'est une précaution à prendre si jamais vous faites une mauvaise manoeuvre.
+        </p>
+        <!-- Sommaire -->
+        <h2>Sommaire:</h2>
+        <ul><li>Matèriel nécessaire</li></ul>
+        <ol>
+            <li>Télécharger la distribution linux</li>
+            <li>Booter sa clef USB</li>
+            <li>Lancer et installer Linux</li>
+        </ol>
+        <ul><li>Conclusion</li></ul>
+        <!--Article-->
+
+        <!--Matèriel nécessaire-->
+        <h2>Matèriel nécessaire</h2>
+        <ul>
+            <li>Une clef Usb d'au moins 4 Go (Suffisante pour y mettre le fichier Linux)<img src="images/USB Stick.svg" alt=""></li>
+            <li>L'ordinateur pour y installer Linux<img src="images/flat-laptop.png" alt=""></li>
+        </ul>
+        <!--Télécharger la distribution Linux-->
+        <h2>Télécharger la distribution Linux</h2>
+        <p>
+            Choisissez votre distribution. La plus connu est <a href="https://ubuntu.com/download/desktop">Ubuntu</a>
+            mais pour la simplicité de l'interface, je vous conseille d'opter plutôt pour <a href="https://linuxmint.com/download.php">LinuxMint</a>.
+        </p>
+        <p>
+            Dans la meme distribution Linux, il y a en général plusieurs environnement ou "flavors". Ce sont les différents moteurs d'interface.
+            Choisissez celle que vous voulez. Sur LinuxMint, je vous conseille Cinnamon.
+            N'oubliez pas de regarder les exigences systèmes (par exemple celles de <a>Mint Cinnamon</a>, <a>Mint XFCE</a>, <a>Ubuntu</a>, <a>Bodhi Linux</a>), si l'ordinateur est un peu vieux.
+        </p>
+        <p>Mint Xfce est engénéralement plus léger mais si vous êtes vraiment très limité en mémoire et en processeur, vous pouvez essayer Bodhi Linux qui est-une distribution très compacte.</p>
+
+        <p>Téléchargez le fichier ISO</p>
+        <!--Booter sa clef USB-->
+        <h2>Booter sa clef USB</h2>
+        <ol>
+            <li>Installez un logiciels pour booter les clef USB (exemple: <a href="https://rufus.ie/en/">Rufus</a>)</li>
+            <li>Connecter sa clef USB</li>
+            <li>Lancer le logiciel</li>
+            <li>Sélectionnez le fichier ISO comme sélection boot et la clef USB comme destination</li>
+            <li>Mettez "BIOS UEFI" comme cible/target.</li>
+            <li>Laissez les autres paramètres tels quels et éxécutez le logiciels.</li>
+            <li>Si vous recevez des messages d'erreurs qui expliquent que le boot de la clef ne sera complète, continuez. Si la machine propose une solution, acceptez.</li>
+        </ol>
+        <!--Lancer-->
+        <h2>Lancer Linux</h2>
+        <p>
+            Connecter la clef USB à l'ordinateur, puis booter l'ordinateur depuis la clef USB.
+            Sur windows 10, on peut faire cela en se connectant puis appuyant sur la touche majeur et sur le bouton redémarrer (en bas à gauche).
+            Sinon vous pouvez le faire en modifiant les paramètre BIOS (le processus diffère en fonction du système d'exploitation) puis en faisant redémarrer l'ordinateur.
+        </p>
+        <p>Une fois arrivé jusque là, vous avez normalement un menu pour soit installer Linux, soit l'essayer. Choisissez d'essayer, vous ne risquez rien.
+            Si jamais la distribution ne vous plait pas, vous pourrez redémarrer avec le bouton de la distribution et surtout pas le bouton qui se trouve sur l'ordinateur</p>
+        <!--Installer Linux-->
+        <h2>Installer Linux</h2>
+        <p>Normalement, dans votre nouvel environnement, vous avez un logiciel "Installer Linux" sur votre fond d'écran, Cliquez dessus.</p>
+        <p>Une fois avoir démarré le logiciel:</p>
+        <ol>
+            <li>On vous demandera le clavier de votre ordinateur (US, FR, NL, AU, etc.) et le mode d'écriture associé</li>
+            <li>Vous choisirez aussi la zone horaire, la langue du système, le mot de passe, etc.</li>
+            <li>Quand vous aurez l'option d'installation, choisissez l'installation dans une partition à côté de windows.
+                Faites attention car si vous choisissez d'installer à la place de windows, cela vous éffacera tous les fichier que vous aviez stoqué sur windows.
+            </li>
+            <li>Continuez à répondre au questionnaire jusqu'à ce que le logiciel passe à l'action.</li>
+        </ol>
+        <p>Là, vous passienterez un petit moment avant de pouvoir redémarrer avec Linux ou Windows.</p>
+        <!--Conclusion-->
+        <h2>Conclusion</h2>
+        <p>
+            Installer Linux à côté de windows ne demande pas beaucoup de matèriel à part une clef USB, par contre, cela demande un peu de temps (une petite heure).
+            Lorsque vous installez Linux vous avez beaucoup de choix. Cependant l'installation de LinuxMint et la plus conviviale.
+            Si vous avez un ordinateur un peu ancien, regardez des distributions et environnement plus légèrs Ainsi que leurs exigence système.
+        </p>
+        <!--Information sur moi-->
+        <p> </p>
+        <h3>Information sur l'article.</h3>
+        <p>Ceci est un article écrit par une personne fan de Linux.</p>
+    </body>
+</html>
