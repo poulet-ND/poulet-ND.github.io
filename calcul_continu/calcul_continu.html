@@ -1,30 +1,126 @@
-<!DOCTYPE>
+<!DOCTYPE html>
+
+
 <html lang="us">
   <head>
     <meta charset="utf8">
-    <title>"S'entrainer pour les maths"</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S'entrainer pour les maths</title>
   </head>
   <body>
-    <button onclick="a(1);">1</button>
-    <button onclick="a(2);">2</button>
-    <button onclick="a(3);">3</button>
+    <h1>Calcul Continu</h1>
+    <p id="question"></p>
+    <p id="answer"></p>
+    <div id="buttons" class="button_container">
+    <!--All button to tap the words-->
+    <button onclick="add_num(1);" style="grid-column: 1;">1</button>
+    <button onclick="add_num(2);" style="grid-column: 2;">2</button>
+    <button onclick="add_num(3);" style="grid-column: 3;">3</button>
     <br>
-    <button onclick="a(4);">4</button>
-    <button onclick="a(5);">5</button>
-    <button onclick="a(6);">6</button>
+    <button onclick="add_num(4);" style="grid-column: 1;">4</button>
+    <button onclick="add_num(5);" style="grid-column: 2;">5</button>
+    <button onclick="add_num(6);" style="grid-column: 3;">6</button>
     <br>
-    <button onclick="a(7);">7</button>
-    <button onclick="a(8);">8</button>
-    <button onclick="a(9);">9</button>
+    <button onclick="add_num(7);" style="grid-column: 1;">7</button>
+    <button onclick="add_num(8);" style="grid-column: 2;">8</button>
+    <button onclick="add_num(9);" style="grid-column: 3;">9</button>
     <br>
-    <button onclick="a(0);">0</button>
+    <button class="o" onclick="a(0);" style="grid-column: 2;">0</button>
+    <button onclick="remove_num();" style="grid-column: 3;">❌</button>
+    </div>
   </body>
   <style>
+    body {
+        justify-items: center;
+        align-items: center;
+        place-items: center;
+    }
+    h1, p{
+        text-align: center;
+    }
     button {
-      color:green
+      color:green;
+      width: 50px;
+      height: 50px;
+      border-radius: 10%;
     }
     .o {
-      color:blue
+      color:blue;
     }
-  </style>
+    .button_container {
+        display: grid;
+        gap: 2px;
+        align-items: center;
+        place-items: center;
+        grid-auto-columns:0fr;
+        justify-content: center;
+    }
+    </style>
+    <script>
+        let operations = ["+","-","*","/"];
+        let UI_operation_sign = {"+":"➕", "-":"➖", "*":"✖", "/":"➗"}
+        let operations_limit = [800, 800, 15, 15];
+        let question = [];
+        let current = 0;
+        let divisors_list = [];
+
+        let question_text = document.getElementById("question")
+        let answer_text = document.getElementById("answer")
+        let users_answer = " "
+        // functions
+        function rdInt(max){
+            return Math.floor(Math.random * max);
+        }
+
+        function divisors(num){
+            let diviseurs = [];
+            for (let i = 2; i <= Math.sqrt(nombre); i++) {
+                if (nombre % i === 0) {
+                    diviseurs.push(i);
+                    if (i !== nombre / i) {
+                        diviseurs.push(nombre / i);
+                    }
+                }
+            }
+
+            // sort divisors
+            diviseurs.sort((a, b) => a - b);
+            return diviseurs;
+        }
+
+        function create_a_question(){
+            current = rdInt(4)
+            question = [rdInt(operations_limit[current]), operations[current]];
+            if (operations[current]==="/"){// if it's a division, we create a division without comma
+                divisors_list = divisors(question[0]);
+                question += divisors_list[Math.rdInt(divisors_list.length)];
+            }else{
+                question += rdInt(operations_limit[current])/// en cours d'écriture........
+            }
+            // display it
+            question_text.textContent = String(question[0])+" "+/*UI_operation_sign[*/question[1]/*]*/+" "+String(question[2]);
+        }
+
+        function update_users_answer() {
+            answer_text.textContent = users_answer;
+        }
+
+        function add_num(num) {
+            users_answer += String(num);
+            update_users_answer();
+        }
+    
+        function remove_num(){
+            if (users_answer.length > 1){
+                users_answer = users_answer.substring(0, -1);
+                update_users_answer();
+            } else {
+                users_answer = " ";
+                update_users_answer();
+            }
+        }
+
+        create_a_question();
+
+    </script>
 </html>
