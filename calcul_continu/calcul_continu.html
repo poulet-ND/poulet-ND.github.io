@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
 
-<html lang="us">
+<html lang="fr">
   <head>
-    <meta charset="utf8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>S'entrainer pour les maths</title>
   </head>
@@ -74,11 +74,11 @@
 
         function divisors(num){
             let diviseurs = [];
-            for (let i = 2; i <= Math.sqrt(nombre); i++) {
-                if (nombre % i === 0) {
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
                     diviseurs.push(i);
-                    if (i !== nombre / i) {
-                        diviseurs.push(nombre / i);
+                    if (i !== num / i) {
+                        diviseurs.push(num / i);
                     }
                 }
             }
