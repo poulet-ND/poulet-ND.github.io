@@ -88,19 +88,31 @@
             return diviseurs;
         }
 
-        function create_a_question(){
-            current = rdInt(4)//choose the operation
-            //create an operation list
-            question = [rdInt(operations_limit[current]), operations[current]];
-            if (operations[current]==="/"){// if it's a division, we create a division without comma
-                divisors_list = divisors(question[0]);
-                question.push( divisors_list[Math.rdInt(divisors_list.length)]);
-            }else{
-                question.push( rdInt(operations_limit[current]) )
+        function create_a_question() {
+            current = rdInt(4); // Choisit une opération aléatoire
+            let firstNumber = rdInt(operations_limit[current]);
+            let secondNumber;
+
+            // Cas particulier pour la division
+            if (operations[current] === "/") {
+            divisors_list = divisors(firstNumber);
+            if (divisors_list.length > 0) {
+                    secondNumber = divisors_list[rdInt(divisors_list.length)];
+            } else {
+                // Si aucun diviseur n'est trouvé, on recommence
+                create_a_question();
+                return;
             }
-            // display it
-            question_text.textContent = String(question[0])+" "+UI_operation_sign[question[1]]+" "+String(question[2]);
+        } else {
+            secondNumber = rdInt(operations_limit[current]);
         }
+
+        // Construction du tableau `question`
+        question = [firstNumber, operations[current], secondNumber];
+
+        // Affichage de la question
+        question_text.textContent = question[0] + " " + UI_operation_sign[question[1]] + " " + question[2];
+    }
 
         function update_users_answer() {
             answer_text.textContent = users_answer;
