@@ -94,12 +94,12 @@
             question = [rdInt(operations_limit[current]), operations[current]];
             if (operations[current]==="/"){// if it's a division, we create a division without comma
                 divisors_list = divisors(question[0]);
-                question += divisors_list[Math.rdInt(divisors_list.length)];
+                question.push( divisors_list[Math.rdInt(divisors_list.length)]);
             }else{
-                question += rdInt(operations_limit[current])
+                question.push( rdInt(operations_limit[current]) )
             }
             // display it
-            question_text.textContent = String(question[0])+" "+/*UI_operation_sign[*/question[1]/*]*/+" "+String(question[2]);
+            question_text.textContent = String(question[0])+" "+UI_operation_sign[question[1]]+" "+String(question[2]);
         }
 
         function update_users_answer() {
