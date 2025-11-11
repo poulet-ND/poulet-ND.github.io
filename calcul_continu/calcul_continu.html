@@ -16,7 +16,7 @@
     <button onclick="add_num(1);" style="grid-column: 1;">1</button>
     <button onclick="add_num(2);" style="grid-column: 2;">2</button>
     <button onclick="add_num(3);" style="grid-column: 3;">3</button>
-    <button onclick="enter;" style="grid-column: 4; grid-row: 1/3">Enter</button>
+    <button onclick="enter();" style="grid-column: 4; grid-row: 1/3;">Enter</button>
     <br>
     <button onclick="add_num(4);" style="grid-column: 1;">4</button>
     <button onclick="add_num(5);" style="grid-column: 2;">5</button>
@@ -111,8 +111,7 @@
                 secondNumber = rdInt(operations_limit[current]);
             }
 
-            // Construction du tableau `question`
-            question = [firstNumber, operations[current], secondNumber];
+            // Construction du tableau 
 
             // Affichage de la question
             question_text.textContent = question[0] + " " + UI_operation_sign[question[1]] + " " + question[2];
@@ -138,7 +137,13 @@
         }
         
         function enter(){
-            // write
+            if (users_answer===String(correct_answer)){
+                answer_text.style.color="green";
+            } else {
+                answer_text.style.color="red";
+            }
+            wait(3);
+            create_a_question();
         }
 
         create_a_question();
