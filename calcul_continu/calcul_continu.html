@@ -111,10 +111,14 @@
                 secondNumber = rdInt(operations_limit[current]);
             }
 
-            // Construction du tableau 
+            // Construction du tableau `questiob`
+            question=[firstnumber, operstions[current], Secondnumber]
 
             // Affichage de la question
             question_text.textContent = question[0] + " " + UI_operation_sign[question[1]] + " " + question[2];
+            
+            // creation de la reponse correcte
+            correct_answer = eval (question_text.textContent) // what?
         }
 
         function update_users_answer() {
