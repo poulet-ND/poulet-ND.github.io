@@ -16,6 +16,7 @@
     <button onclick="add_num(1);" style="grid-column: 1;">1</button>
     <button onclick="add_num(2);" style="grid-column: 2;">2</button>
     <button onclick="add_num(3);" style="grid-column: 3;">3</button>
+    <button onclick="enter;" style="grid-column: 4; grid-row: 1/3">Enter</button>
     <br>
     <button onclick="add_num(4);" style="grid-column: 1;">4</button>
     <button onclick="add_num(5);" style="grid-column: 2;">5</button>
@@ -68,6 +69,9 @@
         let question_text = document.getElementById("question")
         let answer_text = document.getElementById("answer")
         let users_answer = " "
+        
+        let correct_answer = 0
+        
         // functions
         function rdInt(max){
             return Math.floor(Math.random() * max);
@@ -97,23 +101,22 @@
             // Cas particulier pour la division
             if (operations[current] === "/") {
             divisors_list = divisors(firstNumber);
-            if (divisors_list.length > 0) {
-                    secondNumber = divisors_list[rdInt(divisors_list.length)];
+                if (divisors_list.length > 0) {
+                        secondNumber = divisors_list[rdInt(divisors_list.length)];
+                } else {
+                    // Si aucun diviseur n'est trouvé, on recommence
+                    create_a_question();
+                }
             } else {
-                // Si aucun diviseur n'est trouvé, on recommence
-                create_a_question();
-                return;
+                secondNumber = rdInt(operations_limit[current]);
             }
-        } else {
-            secondNumber = rdInt(operations_limit[current]);
+
+            // Construction du tableau `question`
+            question = [firstNumber, operations[current], secondNumber];
+
+            // Affichage de la question
+            question_text.textContent = question[0] + " " + UI_operation_sign[question[1]] + " " + question[2];
         }
-
-        // Construction du tableau `question`
-        question = [firstNumber, operations[current], secondNumber];
-
-        // Affichage de la question
-        question_text.textContent = question[0] + " " + UI_operation_sign[question[1]] + " " + question[2];
-    }
 
         function update_users_answer() {
             answer_text.textContent = users_answer;
@@ -132,6 +135,10 @@
                 users_answer = " ";
                 update_users_answer();
             }
+        }
+        
+        function enter(){
+            // write
         }
 
         create_a_question();
