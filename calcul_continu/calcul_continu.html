@@ -66,11 +66,11 @@
         let current = 0;
         let divisors_list = [];
 
-        let question_text = document.getElementById("question")
-        let answer_text = document.getElementById("answer")
-        let users_answer = " "
+        let question_text = document.getElementById("question");
+        let answer_text = document.getElementById("answer");
+        let users_answer = " ";
         
-        let correct_answer = 0
+        let correct_answer = 0;
         
         // functions
         function rdInt(max){
@@ -112,13 +112,13 @@
             }
 
             // Construction du tableau `questiob`
-            question=[firstNumber, operations[current], secondNumber]
+            question=[firstNumber, operations[current], secondNumber];
 
             // Affichage de la question
             question_text.textContent = question[0] + " " + UI_operation_sign[question[1]] + " " + question[2];
             
             // creation de la reponse correcte
-            correct_answer = eval (question_text.textContent) // what?
+            correct_answer = eval (question_text.textContent) ;// what?
         }
 
         function update_users_answer() {
