@@ -125,6 +125,11 @@
         function update_users_answer() {
             answer_text.textContent = users_answer;
         }
+        
+        function wait(seconds) {
+            return new Promise(resolve => setTimeout(resolve, seconds * 1000));
+        }
+    
 
         function add_num(num) {
             users_answer += String(num);
@@ -148,11 +153,11 @@
                 answer_text.style.color="red";
                 users_answer = correct_answer;
             }
-            wait(3);
+            await wait(1.5);
             create_a_question();
             // reinitialize the answer text
             answer_text.style.color = "black";
-            users_answer = "0";
+            users_answer = " ";
             update_users_answer();
         }
 
