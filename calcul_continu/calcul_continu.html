@@ -126,8 +126,8 @@
             answer_text.textContent = users_answer;
         }
         
-        async function wait(seconds) {
-            return await new Promise(resolve => setTimeout(resolve, seconds * 1000));
+        function wait(seconds) {
+            return new Promise(resolve => setTimeout(resolve, seconds * 1000));
         }
 
         function add_num(num) {
@@ -152,7 +152,9 @@
                 answer_text.style.color="red";
                 users_answer = correct_answer;
             }
-            wait(3);
+            
+            // waot 3 seconds
+            await wait(3);
             create_a_question();
             // reinitialize the answer text
             answer_text.style.color = "black";
