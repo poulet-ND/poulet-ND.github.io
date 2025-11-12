@@ -16,7 +16,7 @@
     <button onclick="add_num(1);" style="grid-column: 1;">1</button>
     <button onclick="add_num(2);" style="grid-column: 2;">2</button>
     <button onclick="add_num(3);" style="grid-column: 3;">3</button>
-    <button onclick="enter();" style="grid-column: 4; grid-row-start:1; grid-row-end:3;; height: 150px;">Enter</button>
+    <button onclick="enter();" style="grid-row: span 2; grid-column: 4; height: 150px;">Enter</button>
     <br>
     <button onclick="add_num(4);" style="grid-column: 1;">4</button>
     <button onclick="add_num(5);" style="grid-column: 2;">5</button>
@@ -56,6 +56,7 @@
         grid-auto-columns:0fr;/* no space between the buttobs */
         grid-auto-rows:0fr;
         justify-content: center;
+        grid-template-rows: repeat(3, 1fr);
     }
     </style>
     <script>
