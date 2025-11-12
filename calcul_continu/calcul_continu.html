@@ -26,7 +26,7 @@
     <button onclick="add_num(8);" style="grid-column: 2;">8</button>
     <button onclick="add_num(9);" style="grid-column: 3;">9</button>
     <br>
-    <button class="o" onclick="a(0);" style="grid-column: 2;">0</button>
+    <button class="o" onclick="add_num(0);" style="grid-column: 2;">0</button>
     <button onclick="remove_num();" style="grid-column: 3;">❌</button>
     </div>
   </body>
@@ -151,7 +151,8 @@
             create_a_question();
             // reinitialize the answer text
             answer_text.style.color = "black";
-            answer_text.innerHTML = "0"
+            users_answer = "0";
+            update_users_answer();
         }
 
         create_a_question();
