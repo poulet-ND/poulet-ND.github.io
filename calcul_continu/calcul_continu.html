@@ -119,7 +119,7 @@
             question_text.textContent = question[0] + " " + UI_operation_sign[question[1]] + " " + question[2];
             
             // creation de la reponse correcte
-            correct_answer = eval (question_text.textContent) ;// what?
+            correct_answer = String( eval (question_text.textContent) ) ;
         }
 
         function update_users_answer() {
@@ -142,7 +142,7 @@
         }
         
         function enter(){
-            if (users_answer===String(correct_answer)){
+            if (users_answer===correct_answer){
                 answer_text.style.color="green";
             } else {
                 answer_text.style.color="red";
